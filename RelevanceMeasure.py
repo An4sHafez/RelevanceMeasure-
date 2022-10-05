@@ -36,7 +36,7 @@ class RelevanceMeasure :
      global results 
      rm.keyWordsList.add("stc")
      rm.keyWordsList.add("saudi")
-    for x in  range(0,  14) :
+     for x in  range(0,  14) :
       text = rm.dataList[x]
       wordsList = rm.text2UniqueWords(dataList[x])
       uod_Net_Weight = rm.calcUoD_NetworkWeight(wordsList, rm.keyWordsList )
@@ -44,11 +44,11 @@ class RelevanceMeasure :
       relevance = (keyWordsPresenceWeight + (uod_Net_Weight))		
       results += text + "," + keyWordsPresenceWeight + "," +uod_Net_Weight + "," + relevance +"\n"				
 
-    try:
+     try:
        f = open(resultFileAddress, "a")
        f.write(results)
        f.close()
-    except Exception as e:
+     except Exception as e:
         raise e 	
 
 
